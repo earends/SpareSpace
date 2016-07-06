@@ -1,0 +1,42 @@
+Garage App
+
+App development:
+
+Welcome and Log in.
+	- How to set up online data base for loggin in and saving log in 
+	- Sign up - username, email, password 
+	- Location services, allow to use location 
+
+Posting Space Tab.
+	- Title
+	- Description/Details
+	- Dimensions
+	- Photos
+	- Price estimate per month
+	- Contact Info (email encryption)
+	- Availability
+	- Location
+
+Looking for storage space Tab
+	- Home Tab
+	- Search Filters (within radius, pricing, availabilty)
+
+Profile Tab
+	- Your listings (Delete listings)
+	- Account settings
+	- Logout
+
+Click on potential listing
+	- Photos to scroll through
+	- Title
+	- Estimate of pricing
+	- Description of space
+	- contact info of seller
+
+Add-ons
+	- Direct messaging
+	- Google Maps view of storage nearby.
+	- Feedback function
+
+
+Safe space app..
