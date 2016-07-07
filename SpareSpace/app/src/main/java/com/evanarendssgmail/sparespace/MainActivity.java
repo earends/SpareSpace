@@ -52,4 +52,13 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    /**
+     * What happens when the user presses the login Button
+     * @param v
+     */
+    public void login_click(View v) {
+        Intent i = new Intent(getApplicationContext(), Home_page.class);
+        startActivity(i);
+    }
 }
