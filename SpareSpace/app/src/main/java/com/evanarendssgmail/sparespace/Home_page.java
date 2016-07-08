@@ -3,14 +3,23 @@ package com.evanarendssgmail.sparespace;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TabHost;
 import android.widget.ToggleButton;
+import android.app.TabActivity;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 
-public class Home_page extends AppCompatActivity {
-    //private TabHost tabHost;
+@SuppressWarnings("deprecation")
+public class Home_page extends TabActivity {
+    //private TabHost host;
 
 
     @Override
@@ -23,52 +32,91 @@ public class Home_page extends AppCompatActivity {
 
 
     private void intializeTabHost() {
-        Resources ressources = getResources();
-        //TabHost tabHost = getTabHost();
-        //tabHost = (TabHost) findViewById(R.id.tabHost);
-        // Android tab
-        Intent intentAndroid = new Intent().setClass(this, Info.class);
-        TabHost.TabSpec tabSpecAndroid = tabHost
-                .newTabSpec("Android")
-                .setIndicator("", ressources.getDrawable(R.drawable.front_logo))
-                .setContent(intentAndroid);
+        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
+        //add another homepage
+        TabHost.TabSpec tab = tabHost.newTabSpec("Home");
+        TabHost.TabSpec tab1 = tabHost.newTabSpec("Buy");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("Sell");
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("Account");
+        //TabHost.TabSpec tab4 = tabHost.newTabSpec("four");
 
-        // Apple tab
-        Intent intentApple = new Intent().setClass(this, Info.class);
-        TabHost.TabSpec tabSpecApple = tabHost
-                .newTabSpec("Apple")
-                .setIndicator("", ressources.getDrawable(R.color.green))
-                .setContent(intentApple);
+        tab.setIndicator("Home");  // sets title
+        tab.setContent(new Intent(this, home.class));
 
-        // Windows tab
-        Intent intentWindows = new Intent().setClass(this, Info.class);
-        TabHost.TabSpec tabSpecWindows = tabHost
-                .newTabSpec("Windows")
-                .setIndicator("", ressources.getDrawable(R.color.red))
-                .setContent(intentWindows);
 
-        // Blackberry tab
-        Intent intentBerry = new Intent().setClass(this, Info.class);
-        TabHost.TabSpec tabSpecBerry = tabHost
-                .newTabSpec("Berry")
-                .setIndicator("", ressources.getDrawable(R.color.blue))
-                .setContent(intentBerry);
+        tab1.setIndicator("Buy");
+        tab1.setContent(new Intent(this, buy.class));
 
-        // add all tabs
-        tabHost.addTab(tabSpecAndroid);
-        tabHost.addTab(tabSpecApple);
-        tabHost.addTab(tabSpecWindows);
-        tabHost.addTab(tabSpecBerry);
 
-        //set Windows tab as default (zero based)
-        tabHost.setCurrentTab(2);
+        tab2.setIndicator("Sell");
+        tab2.setContent(new Intent(this, sell.class));
+
+        tab3.setIndicator("Account");
+        tab3.setContent(new Intent(this, account.class));
+
+        //tab4.setIndicator("four");
+        //tab4.setContent(new Intent(this, account.class));
+
+        tabHost.addTab(tab1);
+        tabHost.addTab(tab);
+
+        tabHost.addTab(tab2);
+        tabHost.addTab(tab3);
+        //tabHost.addTab(tab4);
+
+
+
     }
+        /*
+        View tab1 = tabhost.findViewById(R.id.linearLayout);
+        View tab2 = tabhost.findViewById(R.id.linearLayout2);
+        View tab3 = tabhost.findViewById(R.id.linearLayout3);
+        View tab4 = tabhost.findViewById(R.id.linearLayout4);
+
+        // Set the Tab name and Activity
+        // that will be opened when particular Tab will be selected
+        tab1.setBackgroundColor(Color.rgb(255,0,0));
+        tab2.setBackgroundColor(Color.rgb(0,255,0));
+        tab3.setBackgroundColor(Color.rgb(0,150,0));
+        tab4.setBackgroundColor(Color.rgb(0,255,255));
+        */
+        /*
+        tabhost.setup();
+
+        //Tab 1
+        TabHost.TabSpec spec = tabhost.newTabSpec("Tab One");
+        spec.setContent(R.id.linearLayout);
+        spec.setIndicator("Tab One");
+        tabhost.addTab(spec);
+
+        //Tab 2
+        spec = tabhost.newTabSpec("Tab Two");
+        spec.setContent(R.id.linearLayout2);
+        spec.setIndicator("Tab Two");
+        tabhost.addTab(spec);
+
+        //Tab 3
+        spec = tabhost.newTabSpec("Tab Three");
+        spec.setContent(R.id.linearLayout3);
+        spec.setIndicator("Tab Three");
+        tabhost.addTab(spec);
+
+        //Tab 4
+        spec = tabhost.newTabSpec("Tab Four");
+        spec.setContent(R.id.linearLayout4);
+        spec.setIndicator("Tab Four");
+        tabhost.addTab(spec);
+    }
+    */
 
 
     /**
      * Intialize UI compoonents
      */
     private void initUI() {
-        //tabHost = (TabHost) findViewById(R.id.tabHost);
+        //TabHost host = getTabHost();
     }
+
+
+
 }

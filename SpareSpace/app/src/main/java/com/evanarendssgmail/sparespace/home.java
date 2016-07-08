@@ -1,21 +1,14 @@
 package com.evanarendssgmail.sparespace;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
-
-public class Info extends Activity {
+public class home extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
-
+        setContentView(R.layout.activity_home);
     }
 }
