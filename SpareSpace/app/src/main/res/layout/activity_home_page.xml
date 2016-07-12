@@ -31,7 +31,7 @@
                 <RelativeLayout
                     android:id="@+id/tab2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="465dp"
                     android:background="#da8200"
                     android:orientation="vertical">
 

@@ -60,7 +60,7 @@ public class Home_page extends ActivityGroup {
         spec.setContent(new Intent(this, account.class));
         spec.setIndicator("Account");
         host.addTab(spec);
-        
+
     }
 
 
