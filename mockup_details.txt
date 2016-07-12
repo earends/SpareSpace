@@ -1,0 +1,22 @@
+Account:
+
+- Username 
+- Log out Button
+- Account settings
+-Shows your listings
+-Play around with photos
+-inside account settings log out button
+-thumbnail photos
+
+Sell:
+
+- Title
+- Description (posting details)
+- Upload images
+- aproximate location
+- aproximate price per month
+- checkbox "or best offer" 
+- Dimmensions
+- Contact info
+- continue button 
+- 
