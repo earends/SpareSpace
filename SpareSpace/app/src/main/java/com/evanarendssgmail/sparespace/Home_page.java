@@ -27,41 +27,17 @@ public class Home_page extends ActivityGroup {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
-        initUI();
         intializeTabHost();
     }
 
 
     private void intializeTabHost() {
-        /*
-        Resources ressources = getResources();
-        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
-        //add another homepage
-        TabHost.TabSpec tab = tabHost.newTabSpec("Home");
-        TabHost.TabSpec tab1 = tabHost.newTabSpec("Buy");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("Sell");
-        TabHost.TabSpec tab3 = tabHost.newTabSpec("Account");
-        tab.setIndicator("",ressources.getDrawable(R.mipmap.ic_launcher));  // sets title
-        tab.setContent(new Intent(this, home.class));
-        tab1.setIndicator("Buy");
-        tab1.setContent(new Intent(this, buy.class));
-        tab2.setIndicator("Sell");
-        tab2.setContent(new Intent(this, sell.class));
-        tab3.setIndicator("Account");
-        tab3.setContent(new Intent(this, account.class));
-        //tab4.setIndicator("four");
-        //tab4.setContent(new Intent(this, account.class));
-        tabHost.addTab(tab);
-        tabHost.addTab(tab1);
-        tabHost.addTab(tab2);
-        tabHost.addTab(tab3);
-        //tabHost.addTab(tab4);
-        */
+
         Resources ressources = getResources();
         TabHost host = (TabHost)findViewById(R.id.tabHost);
         host.setup();
         host.setup(this.getLocalActivityManager());
+
 
         //Tab 1
         TabHost.TabSpec spec = host.newTabSpec("Tab One");
@@ -73,26 +49,18 @@ public class Home_page extends ActivityGroup {
 
         //Tab 2
         spec = host.newTabSpec("Tab Two");
-        spec.setContent(R.id.tab2);
-        spec.setIndicator("Tab Two");
+        //spec.setContent(R.id.tab2);
+        spec.setContent(new Intent(this, sell.class));
+        spec.setIndicator("Sell");
         host.addTab(spec);
 
         //Tab 3
         spec = host.newTabSpec("Tab Three");
-        spec.setContent(R.id.tab3);
-        spec.setIndicator("Tab Three");
+        //spec.setContent(R.id.tab3);
+        spec.setContent(new Intent(this, account.class));
+        spec.setIndicator("Account");
         host.addTab(spec);
-
-
-    }
-
-
-
-    /**
-     * Intialize UI compoonents
-     */
-    private void initUI() {
-        //TabHost host = getTabHost();
+        
     }
 
 

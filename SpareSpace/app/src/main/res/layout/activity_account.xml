@@ -9,10 +9,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.evanarendssgmail.sparespace.account">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:background="@color/red"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"></RelativeLayout>
 </RelativeLayout>

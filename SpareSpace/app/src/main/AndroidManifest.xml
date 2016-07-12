@@ -25,10 +25,9 @@
         </activity>
         <activity android:name=".Info" />
         <activity android:name=".Home_page" />
-        <activity android:name=".buy" />
         <activity android:name=".sell" />
-        <activity android:name=".account" />
-        <activity android:name=".home"></activity>
+        <activity android:name=".home" />
+        <activity android:name=".account"></activity>
     </application>
 
 </manifest>
