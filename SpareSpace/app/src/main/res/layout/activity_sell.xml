@@ -69,20 +69,20 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:id="@+id/imageView"
+        android:id="@+id/image_capture"
         android:src="@mipmap/ic_launcher"
-        android:layout_above="@+id/upload_button"
+        android:layout_above="@+id/button_capture"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/upload_button"
-        android:layout_alignEnd="@+id/upload_button" />
+        android:layout_alignRight="@+id/button_capture"
+        android:layout_alignEnd="@+id/button_capture" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upload Images"
-        android:onClick="upload_click"
-        android:id="@+id/upload_button"
+        android:text="Take Picture"
+        android:onClick="capture_click"
+        android:id="@+id/button_capture"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -132,9 +132,29 @@
         android:text="Finish"
         android:onClick="finish_click"
         android:id="@+id/finish"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/image_capture"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:onClick="upload_click"
+        android:id="@+id/button_upload"
+        android:layout_alignTop="@+id/finish"
+        android:layout_toRightOf="@+id/image_capture"
+        android:layout_toEndOf="@+id/image_capture" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:id="@+id/image_upload"
+        android:src="@mipmap/ic_launcher"
+        android:layout_above="@+id/button_upload"
+        android:layout_toRightOf="@+id/image_capture"
+        android:layout_alignRight="@+id/button_upload"
+        android:layout_alignEnd="@+id/button_upload" />
 
 
 </RelativeLayout>
