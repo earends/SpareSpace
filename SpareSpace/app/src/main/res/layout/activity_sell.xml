@@ -71,21 +71,11 @@
         android:layout_height="100dp"
         android:id="@+id/image_capture"
         android:src="@mipmap/ic_launcher"
-        android:layout_above="@+id/button_capture"
+        android:layout_alignTop="@+id/imageView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/button_capture"
-        android:layout_alignEnd="@+id/button_capture" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take Picture"
-        android:onClick="capture_click"
-        android:id="@+id/button_capture"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignEnd="@+id/imageView3" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -132,9 +122,9 @@
         android:text="Finish"
         android:onClick="finish_click"
         android:id="@+id/finish"
-        android:layout_below="@+id/image_capture"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -142,9 +132,9 @@
         android:text="Upload Image"
         android:onClick="upload_click"
         android:id="@+id/button_upload"
-        android:layout_alignTop="@+id/finish"
-        android:layout_toRightOf="@+id/image_capture"
-        android:layout_toEndOf="@+id/image_capture" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -152,9 +142,44 @@
         android:id="@+id/image_upload"
         android:src="@mipmap/ic_launcher"
         android:layout_above="@+id/button_upload"
-        android:layout_toRightOf="@+id/image_capture"
-        android:layout_alignRight="@+id/button_upload"
-        android:layout_alignEnd="@+id/button_upload" />
+        android:layout_toRightOf="@+id/button_upload"
+        android:layout_alignRight="@+id/imageView6"
+        android:layout_alignEnd="@+id/imageView6" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView3"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView4"
+        android:src="@mipmap/ic_launcher"
+        android:layout_above="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView5"
+        android:src="@mipmap/ic_launcher"
+        android:layout_above="@+id/image_upload"
+        android:layout_alignLeft="@+id/image_upload"
+        android:layout_alignStart="@+id/image_upload" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="10dp"
+        android:id="@+id/imageView6"
+        android:layout_alignBottom="@+id/button_upload"
+        android:layout_toRightOf="@+id/button_upload"
+        android:layout_toEndOf="@+id/button_upload" />
 
 
 </RelativeLayout>
