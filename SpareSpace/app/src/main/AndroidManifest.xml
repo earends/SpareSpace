@@ -28,7 +28,8 @@
         <activity android:name=".sell" />
         <activity android:name=".home" />
         <activity android:name=".account" />
-        <activity android:name=".settings"></activity>
+        <activity android:name=".settings" />
+        <activity android:name=".Register"></activity>
     </application>
 
 </manifest>
