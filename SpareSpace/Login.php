@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect(" mysql13.000webhost.com ", "a8457156_Sspace", "discord_space123", "a8457156_Sspace");
+    $con = mysqli_connect("mysql13.000webhost.com", "a8457156_Sspace", "discord_space123", "a8457156_Sspace");
     
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -17,9 +17,9 @@
     while(mysqli_stmt_fetch($statement)){
         $response["success"] = true;  
         $response["name"] = $name;
-        $response["username"] = $username;
-        $response["password"] = $password;
-        $response["age"] = $age;
+        $response["username"] = $age;
+        $response["password"] = $username;
+        $response["age"] = $password;
     }
     
     echo json_encode($response);
