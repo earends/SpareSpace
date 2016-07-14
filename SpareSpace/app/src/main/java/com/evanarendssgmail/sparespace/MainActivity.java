@@ -62,4 +62,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), Home_page.class);
         startActivity(i);
     }
+
+    public void register_click(View v) {
+        Intent i = new Intent(getApplicationContext(),Register.class);
+        startActivity(i);
+    }
 }
