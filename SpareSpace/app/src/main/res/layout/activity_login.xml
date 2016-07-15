@@ -112,6 +112,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Forgot?"
+            android:textSize="15dp"
             android:onClick="forgot_click"
             android:id="@+id/textView11"
             android:layout_alignBottom="@+id/login_password"
