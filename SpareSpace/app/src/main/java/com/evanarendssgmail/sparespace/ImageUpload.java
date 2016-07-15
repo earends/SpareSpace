@@ -3,6 +3,7 @@ package com.evanarendssgmail.sparespace;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.net.Uri;
@@ -12,6 +13,7 @@ import android.provider.MediaStore;
 //import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,13 +34,17 @@ import org.apache.http.params.HttpParams;
 
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class ImageUpload extends Activity implements View.OnClickListener {
 
 
-    private ImageView upload;
-    private ImageView download;
+    private ImageView upload_im;
+    private ImageView download_im;
     private EditText n_upload;
     private EditText n_download;
     private Button b_upload;
@@ -53,14 +59,14 @@ public class ImageUpload extends Activity implements View.OnClickListener {
 
 
 
-        upload = (ImageView) findViewById(R.id.image_upload);
-        download = (ImageView) findViewById(R.id.image_download);
+        upload_im = (ImageView) findViewById(R.id.image_upload);
+        download_im = (ImageView) findViewById(R.id.image_download);
         n_upload = (EditText) findViewById(R.id.upload_name);
         n_download = (EditText) findViewById(R.id.download_name);
         b_upload = (Button) findViewById(R.id.image_upload_button);
         b_download = (Button) findViewById(R.id.download_button);
 
-        upload.setOnClickListener(this);
+        upload_im.setOnClickListener(this);
         b_upload.setOnClickListener(this);
         b_download.setOnClickListener(this);
     }
@@ -72,10 +78,11 @@ public class ImageUpload extends Activity implements View.OnClickListener {
                 startActivityForResult(galleryIntent,RESULT_LOAD_IMAGE);
                 break;
             case R.id.image_upload_button:
-                Bitmap image = ((BitmapDrawable)upload.getDrawable()).getBitmap();
+                Bitmap image = ((BitmapDrawable)upload_im.getDrawable()).getBitmap();
                 new UploadImage(image,n_upload.getText().toString()).execute();
                 break;
             case R.id.download_button:
+                new DownloadImage(n_download.getText().toString()).execute();
                 break;
         }
 
@@ -86,7 +93,7 @@ public class ImageUpload extends Activity implements View.OnClickListener {
         super.onActivityResult(requestCode,resultCode,data);
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
             Uri selectedImage = data.getData();
-            upload.setImageURI(selectedImage);
+            upload_im.setImageURI(selectedImage);
         }
     }
 
@@ -103,7 +110,7 @@ public class ImageUpload extends Activity implements View.OnClickListener {
         @Override
         protected Void doInBackground(Void... params) {
             ByteArrayOutputStream byt = new ByteArrayOutputStream();
-            image.compress(Bitmap.CompressFormat.JPEG,100,byt);
+            image.compress(Bitmap.CompressFormat.JPEG,50,byt); // the '50' some how adjsuts size of pic allowed over stream
             String encodedImage = Base64.encodeToString(byt.toByteArray(),Base64.DEFAULT);
 
             ArrayList<NameValuePair> dataToSend = new ArrayList<>();
@@ -131,6 +138,44 @@ public class ImageUpload extends Activity implements View.OnClickListener {
 
         }
     }
+
+    private class DownloadImage extends AsyncTask<Void,Void,Bitmap> {
+        String name;
+
+        public DownloadImage(String name) {
+            Log.d("downloading", "constructor");
+            this.name = name;
+        }
+
+        @Override
+        protected Bitmap doInBackground(Void... params) {
+            String url = SERVER_ADDRESS + "pictures/" + name + ".jpg";
+            try {
+                Log.d("downloading", "try");
+                Log.d("downloading", url);
+                URLConnection connection = new URL(url).openConnection();
+                connection.setConnectTimeout(1000*30);
+                connection.setReadTimeout(1000*30);
+                return BitmapFactory.decodeStream((InputStream)connection.getContent(),null,null);
+
+            } catch( Exception e) {
+                Log.d("downloading", "catch");
+                e.printStackTrace();
+                return null;
+            }
+
+
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+                if (bitmap != null) {
+                    download_im.setImageBitmap(bitmap);
+                }
+        }
+    }
+
 
     private HttpParams getHttpRequestParams() {
         HttpParams httpRequestParams = new BasicHttpParams();
