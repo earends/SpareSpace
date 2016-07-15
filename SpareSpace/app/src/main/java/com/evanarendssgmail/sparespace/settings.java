@@ -1,9 +1,10 @@
 package com.evanarendssgmail.sparespace;
 
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class settings extends AppCompatActivity {
+public class settings extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

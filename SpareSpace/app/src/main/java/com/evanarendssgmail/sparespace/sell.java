@@ -62,7 +62,7 @@ public class sell extends Activity {
         builder.setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                boolean result = Utility.checkPermission(sell.this);
+                //boolean result = Utility.checkPermission(sell.this);
                 if (items[item].equals("Take Photo")) {
                     userChoosenTask = "Take Photo";
                     cameraIntent();

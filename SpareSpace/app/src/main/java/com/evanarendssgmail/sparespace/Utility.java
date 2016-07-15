@@ -8,10 +8,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+//import android.app.ActivityCompat;
+//import android.support.v4.content.ContextCompat;
 
-public class Utility {
+public class Utility extends Activity {
+    /*
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public static boolean checkPermission(final Context context)
@@ -44,5 +45,6 @@ public class Utility {
             return true;
         }
     }
+    */
 }
 //- See more at: http://www.theappguruz.com/blog/android-take-photo-camera-gallery-code-sample#sthash.bnAwl2Fr.dpuf

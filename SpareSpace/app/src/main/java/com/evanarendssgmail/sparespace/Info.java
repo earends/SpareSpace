@@ -2,7 +2,7 @@ package com.evanarendssgmail.sparespace;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,5 +1,6 @@
 package com.evanarendssgmail.sparespace;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -8,19 +9,32 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.android.volley.toolbox.StringRequest;
+
 import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
-public class ImageUpload extends AppCompatActivity implements View.OnClickListener {
+public class ImageUpload extends Activity implements View.OnClickListener {
 
 
     private ImageView upload;
@@ -31,6 +45,7 @@ public class ImageUpload extends AppCompatActivity implements View.OnClickListen
     private Button b_download;
 
     private static final int RESULT_LOAD_IMAGE = 1;
+    private static final String SERVER_ADDRESS = "http://sparespace.netai.net/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +73,7 @@ public class ImageUpload extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.image_upload_button:
                 Bitmap image = ((BitmapDrawable)upload.getDrawable()).getBitmap();
+                new UploadImage(image,n_upload.getText().toString()).execute();
                 break;
             case R.id.download_button:
                 break;
@@ -94,13 +110,34 @@ public class ImageUpload extends AppCompatActivity implements View.OnClickListen
             dataToSend.add(new BasicNameValuePair("image",encodedImage));
             dataToSend.add(new BasicNameValuePair("name",name));
 
+            HttpParams httpRequest = getHttpRequestParams();
+            HttpClient client = new DefaultHttpClient(httpRequest);
+            HttpPost post = new HttpPost(SERVER_ADDRESS + "SavePicture.php");
+
+            try {
+                post.setEntity(new UrlEncodedFormEntity(dataToSend));
+                client.execute(post);
+            } catch (Exception e) {
+
+            }
+
             return null;
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+                Toast.makeText(getApplicationContext(), "Image Uploaded", Toast.LENGTH_SHORT).show();
+
         }
+    }
+
+    private HttpParams getHttpRequestParams() {
+        HttpParams httpRequestParams = new BasicHttpParams();
+        HttpConnectionParams.setConnectionTimeout(httpRequestParams,1000* 30);
+        HttpConnectionParams.setSoTimeout(httpRequestParams,1000* 30);
+        return httpRequestParams;
+
     }
 
 }
