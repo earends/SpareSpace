@@ -50,7 +50,7 @@ public class Home_page extends ActivityGroup {
         //Tab 2
         spec = host.newTabSpec("Tab Two");
         //spec.setContent(R.id.tab2);
-        spec.setContent(new Intent(this, sell.class));
+        spec.setContent(new Intent(this, ImageUpload.class));
         spec.setIndicator("Sell");
         host.addTab(spec);
 
