@@ -1,6 +1,7 @@
 package com.evanarendssgmail.sparespace;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,7 +21,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -31,6 +35,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 import java.io.ByteArrayOutputStream;
@@ -78,13 +84,51 @@ public class ImageUpload extends Activity implements View.OnClickListener {
                 startActivityForResult(galleryIntent,RESULT_LOAD_IMAGE);
                 break;
             case R.id.image_upload_button:
+                uploadName();
                 Bitmap image = ((BitmapDrawable)upload_im.getDrawable()).getBitmap();
                 new UploadImage(image,n_upload.getText().toString()).execute();
+
                 break;
             case R.id.download_button:
                 new DownloadImage(n_download.getText().toString()).execute();
                 break;
         }
+
+    }
+
+    private void uploadName() {
+        Log.d("upload name", "initiated");
+        String name = n_upload.getText().toString();
+        String username = name;
+        String password = name;
+        int age = 21;
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if (success) {
+                        Log.d("imageUPLOAD", "SUCESS");
+                        //Intent intent = new Intent(Ima.this, MainActivity.class);
+                        //Register.this.startActivity(intent);
+                    } else {
+                        Log.d("imageUPLOAD", "FAIL");
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ImageUpload.this);
+                        builder.setMessage("Register Failed")
+                                .setNegativeButton("Retry", null)
+                                .create()
+                                .show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        RegisterNameRequest registerRequest = new RegisterNameRequest(name, username, age, password, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(ImageUpload.this);
+        queue.add(registerRequest);
 
     }
 
