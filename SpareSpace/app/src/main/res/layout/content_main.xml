@@ -29,7 +29,7 @@
         android:inputType="textPersonName"
         android:text="Username"
         android:ems="10"
-        android:id="@+id/user2_text"
+        android:id="@+id/login_username"
         android:layout_marginTop="65dp"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
@@ -39,10 +39,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:text="--------"
+        android:text="Password"
         android:ems="10"
-        android:id="@+id/password3_text"
-        android:layout_below="@+id/user2_text"
+        android:id="@+id/login_password"
+        android:layout_below="@+id/login_username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

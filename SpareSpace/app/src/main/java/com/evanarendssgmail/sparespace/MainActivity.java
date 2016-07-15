@@ -1,10 +1,7 @@
 package com.evanarendssgmail.sparespace;
 
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -36,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        final EditText etUsername = (EditText) findViewById(R.id.user2_text);
-        final EditText etPassword = (EditText) findViewById(R.id.password3_text);
+        final EditText etUsername = (EditText) findViewById(R.id.login_username);
+        final EditText etPassword = (EditText) findViewById(R.id.login_password);
         final Button bLogin = (Button) findViewById(R.id.login_button);
 
-        bLogin.setOnClickListener(new View.OnClickListener() {
 
+
+        bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("your tag","barely there");
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
 
@@ -53,29 +49,19 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            Log.d("Your tag", "nice try");
                             JSONObject jsonResponse = new JSONObject(response);
-                            Log.d("your tag","response");
                             boolean success = jsonResponse.getBoolean("success");
-                            Log.d("Your tag", "sucess1");
 
                             if (success) {
-                                Log.d("Your tag","success2");
                                 String name = jsonResponse.getString("name");
                                 int age = jsonResponse.getInt("age");
-                                Log.d("Your tag","before intent");
+
                                 Intent intent = new Intent(MainActivity.this, UserArea.class);
-                                Log.d("Your tag","after intent");
-                                //Intent intent = new Intent(getApplicationContext(), UserArea.class);
                                 intent.putExtra("name", name);
                                 intent.putExtra("age", age);
                                 intent.putExtra("username", username);
-                                Log.d("Your tag","varaiables");
-                                //startActivity(intent);
                                 MainActivity.this.startActivity(intent);
-                                Log.d("YOUR TAG","COMPLETED");
                             } else {
-                                Log.d("YOUR TAG","WONT LOAD");
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                 builder.setMessage("Login Failed")
                                         .setNegativeButton("Retry", null)
