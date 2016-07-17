@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.app.AlertDialog;
 //import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login extends Activity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +50,12 @@ public class Login extends Activity {
                             if (success) {
                                 String name = jsonResponse.getString("name");
                                 int age = jsonResponse.getInt("age");
-
+                                String user = jsonResponse.getString("username");
+                                Log.d("json Respnse",user);
                                 Intent intent = new Intent(Login.this, Home_page.class);
                                 intent.putExtra("name", name);
                                 intent.putExtra("age", age);
-                                intent.putExtra("username", username);
+                                intent.putExtra("username", user);
                                 Login.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);

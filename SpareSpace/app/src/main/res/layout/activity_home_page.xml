@@ -5,7 +5,7 @@
     tools:context=".Home_page">
 
     <TabHost
-        android:id="@+id/tabHost"
+        android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"

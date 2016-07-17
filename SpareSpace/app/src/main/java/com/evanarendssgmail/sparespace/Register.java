@@ -44,7 +44,7 @@ public class Register extends Activity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if (success) {
-                                Intent intent = new Intent(Register.this, MainActivity.class);
+                                Intent intent = new Intent(Register.this, Login.class);
                                 Register.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
