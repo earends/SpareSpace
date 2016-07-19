@@ -9,6 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 //class borrwed from https://www.learn2crack.com/2013/10/android-custom-listview-images-text-example.html
+
+/**
+ * Class creates a custom list view so that the Home page list view can contain images as well as postings
+ * YET TO INCLUDE - ON CLICK LISTENER FOR EACH POSTING
+ * Figure out how to assign id to each posting
+ */
 public class CustomList extends ArrayAdapter<String>{
 
     private final Activity context;

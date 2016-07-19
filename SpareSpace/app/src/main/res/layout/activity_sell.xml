@@ -109,8 +109,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish"
+        android:id="@+id/finish_button"
         android:onClick="finish_click"
-        android:id="@+id/finish"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/editText3"
         android:layout_alignEnd="@+id/editText3" />

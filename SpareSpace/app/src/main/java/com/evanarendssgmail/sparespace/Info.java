@@ -1,4 +1,7 @@
 package com.evanarendssgmail.sparespace;
+/*
+Description: This activity will give the app user an description of the app, and the company details
+ */
 
 import android.app.Activity;
 import android.os.Bundle;

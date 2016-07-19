@@ -1,4 +1,7 @@
 package com.evanarendssgmail.sparespace;
+/*
+Description: Duplicate class of RegisterRequest, used to write the names of each picture uploaded to server
+ */
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
