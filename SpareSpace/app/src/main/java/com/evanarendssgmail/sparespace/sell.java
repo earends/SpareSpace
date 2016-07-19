@@ -18,8 +18,14 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -30,6 +36,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -46,15 +54,41 @@ public class sell extends Activity {
     //private static final int RESULT_LOAD_IMAGE = 1;
     private static final String SERVER_ADDRESS = "http://sparespace.netai.net/";
     private String userChoosenTask;
+    private String img;
+    private String img2;
     private ImageView view;
     private ImageView view2;
+    private EditText title;
+    private EditText description;
+    private EditText location;
+    private EditText cost;
+    private EditText dimmensions;
+    private EditText phone;
+    private EditText email;
+    private CheckBox obo;
+    private boolean checked;
+    private boolean there;
+    private boolean there2 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
+        //INIT UI COMPONENENTS
         view = (ImageView) findViewById(R.id.upload_1);
         view2 = (ImageView) findViewById(R.id.upload_2);
+        title = (EditText) findViewById(R.id.title_text);
+        description = (EditText) findViewById(R.id.description_text);
+        location = (EditText) findViewById(R.id.location_text);
+        cost = (EditText) findViewById(R.id.cost_text);
+        dimmensions = (EditText) findViewById(R.id.dimmension_text);
+        phone = (EditText) findViewById(R.id.phone_text);
+        email = (EditText) findViewById(R.id.email_text);
+        obo = (CheckBox) findViewById(R.id.obo_box);
+        img = "null";
+        img2 = "null";
+        there = false;
+        there2 = false;
 
 
     }
@@ -69,14 +103,71 @@ public class sell extends Activity {
         selectImage();
     }
 
+    public void obo_check(View v) {
+        checked = (obo).isChecked();
+    }
+
     /**
      * if the finish button is clicked upload the postinf details to the server
      * @param v
      */
     public void finish_click(View v) {
-        Log.d(Home_page.userName,"USERNAME");
-        Bitmap image = ((BitmapDrawable)view.getDrawable()).getBitmap();
-        new UploadImage(image,Home_page.userName).execute();
+
+        // Grab the UI compoents:
+        String Title = title.getText().toString();
+        String Description = description.getText().toString();
+        String Location = location.getText().toString();
+        String Cost = cost.getText().toString();
+        String Dimmension = dimmensions.getText().toString();
+        String Phone = phone.getText().toString();
+        String Email = email.getText().toString();
+        //String image1 = Home_page.userName + "1";
+        //String image2 = Home_page.userName + "2";
+        String check = Boolean.toString(checked);
+
+        //Uploads Image to server
+        if (there) {
+            Bitmap image = ((BitmapDrawable)view.getDrawable()).getBitmap();
+            new UploadImage(image,img).execute();
+        }
+        if (there2) {
+            Bitmap image = ((BitmapDrawable)view2.getDrawable()).getBitmap();
+            new UploadImage(image,img2).execute();
+        }
+
+        //Makes request to upload other posting details to server
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    // puts reponse into form of JsonObject
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    // if php file returns sucess
+                    //Start Login activity so user can Login
+                    if (success) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(sell.this);
+                        builder.setMessage("Posting Uploaded")
+                                .create()
+                                .show();
+                    } else { // if returns false
+                        //Stay on page and have user try to Login again
+                        AlertDialog.Builder builder = new AlertDialog.Builder(sell.this);
+                        builder.setMessage("Upload Failed")
+                                .setNegativeButton("Retry", null)
+                                .create()
+                                .show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        // Before there can be a reponse make a request to access the servers information, pass along the...
+        // name, username.. etc to write into the server
+        RegisterNameRequest registerRequest = new RegisterNameRequest(Home_page.userName, Title, Description,Location,Cost,check,Dimmension,Phone,Email,img,img2, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(sell.this);
+        queue.add(registerRequest);
     }
 
     /**
@@ -150,6 +241,8 @@ public class sell extends Activity {
                     Bundle extras = data.getExtras();
                     Bitmap imageBitmap = (Bitmap) extras.get("data");
                     view2.setImageBitmap(imageBitmap);
+                    img2 = Home_page.userName + "2";
+                    there2 = true;
                 }
             }
         }
@@ -168,6 +261,8 @@ public class sell extends Activity {
             }
         }
         view.setImageBitmap(bm);
+        img = Home_page.userName + "1";
+        there = true;
     }
 
     /**
@@ -236,9 +331,6 @@ public class sell extends Activity {
         return httpRequestParams;
 
     }
-
-
-
 
 
 } // end bracket

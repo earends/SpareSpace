@@ -10,16 +10,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterNameRequest extends StringRequest {
-    private static final String REGISTER_REQUEST_URL = "http://sparespace.netai.net/pictureCountWrite.php";
+    private static final String REGISTER_REQUEST_URL = "http://sparespace.netai.net/postingsWrite.php";
     private Map<String, String> params;
 
-    public RegisterNameRequest(String name, String username, int age, String password, Response.Listener<String> listener) {
+    public RegisterNameRequest(String username, String title, String description, String location,String cost, String obo, String dimmension, String phone, String email, String image,String image2, Response.Listener<String> listener) {
         super(Method.POST, REGISTER_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("name", name);
         params.put("username", username);
-        params.put("age", age + "");
-        params.put("password", password);
+        params.put("title",title);
+        params.put("description",description);
+        params.put("location", location);
+        params.put("cost",cost);
+        params.put("obo",obo);
+        params.put("dimmension",dimmension);
+        params.put("phone",phone);
+        params.put("email",email);
+        params.put("image",image);
+        params.put("image2",image2);
     }
 
     @Override

@@ -125,10 +125,11 @@ public class ImageUpload extends Activity implements View.OnClickListener {
                 }
             }
         };
-
+        /*
         RegisterNameRequest registerRequest = new RegisterNameRequest(name, username, age, password, responseListener);
         RequestQueue queue = Volley.newRequestQueue(ImageUpload.this);
-        queue.add(registerRequest);
+        queue.add(registerRequest);\
+        */
 
     }
 
