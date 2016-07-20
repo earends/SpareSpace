@@ -46,7 +46,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/cost_text"
         android:layout_below="@+id/location_text"
@@ -70,7 +69,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/dimmension_text"
         android:layout_below="@+id/obo_box"
