@@ -20,40 +20,54 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class home extends Activity {
+import java.util.ArrayList;
+import java.util.Arrays;
 
-    ListView list;
-    String[] web = {
+public class home extends Activity {
+    private String [] usernames;
+    private static String [] titles;
+    private String [] descriptions;
+    private String [] locations;
+    private String [] costs;
+    private String [] obos;
+    private String [] dimmensions;
+    private String [] phones;
+    private String [] emails;
+    private String [] image;
+    private String [] image2;
+
+    static ListView list;
+    static String[] web = {
             "Google Plus",
             "Twitter",
             "Windows",
-            "Bing",
-            "Itunes",
-            "Wordpress",
-            "Drupal",
-            "Google Plus",
-            "Twitter",
-            "Windows",
-            "Bing",
-            "Itunes",
-            "Wordpress",
-            "Drupal"
-    } ;
-    Integer[] imageId = {
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
+            "Bing"
+            //"Itunes",
+            //"Wordpress",
+            //"Drupal",
+            //"Google Plus",
+            //"Twitter",
+            //"Windows",
+            //"Bing",
+            //"Itunes",
+            //"Wordpress",
+            //"Drupal"
+    };
+    static Integer[] imageId = {
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher,
+            //R.mipmap.ic_launcher
 
     };
 
@@ -79,6 +93,49 @@ public class home extends Activity {
                                 .setNegativeButton("Retry", null)
                                 .create()
                                 .show();
+                        int leng = jsonResponse.length()/11;
+                        usernames = new String[leng];
+                        titles = new String[leng];
+                        descriptions = new String[leng];
+                        locations = new String[leng];
+                        costs = new String[leng];
+                        obos = new String [leng];
+                        dimmensions = new String[leng];
+                        phones = new String[leng];
+                        emails = new String[leng];
+                        image = new String[leng];
+                        image2 = new String[leng];
+
+                        Log.d("YOUR TAG", "INIT ARRAY DONE");
+                        String length = "";
+                        int index = 0;
+                        for (int i = 0; i < leng; i ++) {
+                            index = 11 * i;
+                            length = Integer.toString(index);
+                            usernames[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 1);
+                            titles[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index+ 2);
+                            descriptions[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 3);
+                            locations[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 4);
+                            costs[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 5);
+                            obos[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 6);
+                            dimmensions[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 7);
+                            phones[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 8);
+                            emails[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 9);
+                            image[i] = jsonResponse.getString(length);
+                            length = Integer.toString(index + 10);
+                            image2[i] = jsonResponse.getString(length);
+
+                        }
+                        Log.d("YOUR TAG", "FOR LOOP DONE");
                         Log.d("YOUR TAG", Integer.toString(jsonResponse.length()));
                         Log.d("YOUR TAG", jsonResponse.getString("0"));
                         Log.d("YOUR TAG", jsonResponse.getString("1"));
@@ -91,6 +148,7 @@ public class home extends Activity {
                         Log.d("YOUR TAG", jsonResponse.getString("8"));
                         Log.d("YOUR TAG", jsonResponse.getString("9"));
                         Log.d("YOUR TAG", jsonResponse.getString("10"));
+                        Log.d("YOUR TAG", "LOG STATEMENTS DONE");
 
                         //String name = jsonResponse.getString("name");
                         //int age = jsonResponse.getInt("age");
@@ -113,18 +171,44 @@ public class home extends Activity {
         PostRequest postRequest = new PostRequest(responseListener);
         RequestQueue queue = Volley.newRequestQueue(home.this);
         queue.add(postRequest);
+        Log.d("YOUR TAG", "BEFORE LISTVIEW ADAPTER");
 
+        ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(titles));
+        //String[] stockArr = new String[arrayList.size()];
+        //stockArr = arrayList.toArray(stockArr);
+        CustomList adapter = new CustomList(home.this, arrayList, imageId);
+        list = (ListView)findViewById(R.id.list);
+        list.setAdapter(adapter);
+        Log.d("YOUR TAG", "AFTER LIST VIEW ADAPTED");
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(home.this, "You Clicked at " +titles[+ position], Toast.LENGTH_SHORT).show();
+
+            }
+        });
         //creates adapter for listview
-        CustomList adapter = new CustomList(home.this, web, imageId);
-        list=(ListView)findViewById(R.id.list);
+
+    }//end of oncreate
+
+    public void new_click(View v) {
+        ArrayList<String> arr = new ArrayList<String>(Arrays.asList(titles));
+
+        //CustomList adapter = new CustomList(home.this, titles, imageId);
+        //list = (ListView)findViewById(R.id.list);
+        CustomList adapter = new CustomList(home.this, arr, imageId);
+        list = (ListView)findViewById(R.id.list);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(home.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(home.this, "You Clicked at " +titles[+ position], Toast.LENGTH_SHORT).show();
 
             }
         });
     }
+
+
 }

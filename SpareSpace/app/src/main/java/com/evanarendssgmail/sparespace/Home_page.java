@@ -98,6 +98,8 @@ public class Home_page extends TabActivity {
                 }
                 if( tabId.equals("Tab One") ){
                     startActivity(new Intent(Home_page.this, home.class));
+                    startActivity(new Intent(Home_page.this, Home_page.class));
+                    //startActivity(new Intent(Home_page.this, home.class));
                     //home class
                     //home.self.theMethodYouWantToCall();
                 }
