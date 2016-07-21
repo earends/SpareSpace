@@ -55,7 +55,8 @@ public class home extends ListActivity {
     private static Bitmap bit;
     private static Drawable draw;
     private ImageView img_download;
-    private int Jlength;
+    public static int pos;
+    private static int Jlength;
     private ArrayList<Bitmap> bitList;
     private int picCount;
     private ArrayList<String> usernames;
@@ -69,6 +70,16 @@ public class home extends ListActivity {
     private ArrayList<String> emails;
     private ArrayList<String> image;
     private ArrayList<String> image2;
+    public static String title;
+    public static String description;
+    public static String location;
+    public static String cost;
+    public static String obo;
+    public static String dimmension;
+    public static String phone;
+    public static String email;
+    public static String img;
+    public static String img2;
 
     static ListView list;
     static String[] web = {
@@ -261,22 +272,7 @@ public class home extends ListActivity {
             Log.d("YOUR TAG", Integer.toString(bitList.size()));
             picCount ++;
         }
-        if (bitList.size() == Jlength) {
-            CustomList adapter = new CustomList(home.this, titles, bitList);
-            list = (ListView)findViewById(android.R.id.list);
-            list.setAdapter(adapter);
-            Log.d("YOUR TAG", "AFTER LIST VIEW ADAPTED");
-            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(home.this, "You Clicked at " + titles.get(+position), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-        } else {
-            Log.d("YOUR TAG", Integer.toString(bitList.size()));
-        }
 
         //CustomList adapter = new CustomList(home.this, titles, imageId);
 
@@ -335,7 +331,19 @@ public class home extends ListActivity {
 
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            //Toast.makeText(home.this, "You Clicked at " +titles[+ position], Toast.LENGTH_SHORT).show();
+                            Toast.makeText(home.this, "You Clicked at " + titles.get(+position) + position, Toast.LENGTH_SHORT).show();
+                            //pos = position;
+                            title = titles.get(position);
+                            description = descriptions.get(position);
+                            location = locations.get(position);
+                            cost = costs.get(position);
+                            dimmension = dimmensions.get(position);
+                            phone = phones.get(position);
+                            email = emails.get(position);
+                            img = image.get(position);
+                            img2 = image2.get(position);
+                            Intent i = new Intent(getApplicationContext(),SelectPost.class);
+                            startActivity(i);
 
                         }
                     });
@@ -356,7 +364,6 @@ public class home extends ListActivity {
         HttpConnectionParams.setConnectionTimeout(httpRequestParams,1000* 30);
         HttpConnectionParams.setSoTimeout(httpRequestParams,1000* 30);
         return httpRequestParams;
-
     }
 
 
