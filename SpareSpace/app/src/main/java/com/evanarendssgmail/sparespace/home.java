@@ -144,9 +144,7 @@ public class home extends ListActivity {
                                 .create()
                                 .show();
                         */
-                        if (response.length() == 0) {
-                            return;
-                        }
+
                         Jlength = jsonResponse.length()/11;
                         int leng = jsonResponse.length()/11;
                         /*
@@ -204,6 +202,7 @@ public class home extends ListActivity {
                             length = Integer.toString(index + 10);
                             image2[i] = jsonResponse.getString(length);
                             */
+
                             length = Integer.toString(index);
                             usernames.add(jsonResponse.getString(length));
                             length = Integer.toString(index + 1);

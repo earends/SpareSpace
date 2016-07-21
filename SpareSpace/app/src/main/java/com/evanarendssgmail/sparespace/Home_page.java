@@ -77,7 +77,6 @@ public class Home_page extends TabActivity {
         spec = host.newTabSpec("Tab Three");
         //spec.setContent(R.id.tab3);
         spec.setContent(new Intent(this, account.class));
-
         spec.setIndicator("Account");
         host.addTab(spec);
 
@@ -89,8 +88,8 @@ public class Home_page extends TabActivity {
                 RelativeLayout tab1 = (RelativeLayout) findViewById(R.id.tab1);
                 if( tabId.equals("Tab Three") ){
                     // account class
-                    Log.d("your tag",userName);
-                    account.nameID.setText(userName);
+                    //Log.d("your tag",userName);
+                    //account.nameID.setText(userName);
                 }
                 if( tabId.equals("Tab Two") ){
                     //sell class
