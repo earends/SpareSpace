@@ -87,17 +87,23 @@ public class Home_page extends TabActivity {
             public void onTabChanged(String tabId) {
                 RelativeLayout tab1 = (RelativeLayout) findViewById(R.id.tab1);
                 if( tabId.equals("Tab Three") ){
+                    Log.d("YOUR TAG", "Account page clicked");
                     // account class
                     //Log.d("your tag",userName);
-                    //account.nameID.setText(userName);
+                    account.nameID.setText(Login.usernme);
                 }
                 if( tabId.equals("Tab Two") ){
+                    Log.d("YOUR TAG", "Sell page clicked");
+                    sell.posted = false;
+
                     //sell class
                     //sell.self.theMethodYouWantToCall();
                 }
                 if( tabId.equals("Tab One") ){
-                    //startActivity(new Intent(Home_page.this, home.class));
+                    Log.d("HOME PAGE CLICKED", "SpareSpace");
                     //startActivity(new Intent(Home_page.this, Home_page.class));
+                    //startActivity(new Intent(Home_page.this, Home_page.class));
+
                     //startActivity(new Intent(Home_page.this, home.class));
                     //home class
                     //home.self.theMethodYouWantToCall();

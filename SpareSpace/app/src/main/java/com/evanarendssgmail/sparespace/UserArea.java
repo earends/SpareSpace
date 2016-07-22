@@ -13,19 +13,8 @@ public class UserArea extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String username = intent.getStringExtra("username");
-        int age = intent.getIntExtra("age", -1);
-
-        TextView tvWelcomeMsg = (TextView) findViewById(R.id.tvWelcomeMsg);
-        EditText etUsername = (EditText) findViewById(R.id.etUsername);
-        EditText etAge = (EditText) findViewById(R.id.etAge);
-
-        // Display user details
-        String message = name + " welcome to your user area";
-        tvWelcomeMsg.setText(message);
-        etUsername.setText(username);
-        etAge.setText(age + "");
+        TextView view = (TextView) findViewById(R.id.textView2);
+        //Posting post = new Posting("title","description","location","cost","dimmension","obo","phone","email");
+        //Posting post2 = new Posting("title2","description2","location2","cost2","dimmension2","obo2","phone2","email2");
     }
 }

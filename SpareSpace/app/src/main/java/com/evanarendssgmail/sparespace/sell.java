@@ -48,6 +48,7 @@ import java.util.ArrayList;
 
 public class sell extends Activity {
 
+    public static boolean posted;
     private static final int SELECT_FILE = 1;
     //private static final int REQUEST_CAMERA = 1;
     private static final int REQUEST_IMAGE_CAPTURE = 0;
@@ -75,6 +76,7 @@ public class sell extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
         //INIT UI COMPONENENTS
+        posted = false;
         view = (ImageView) findViewById(R.id.upload_1);
         view2 = (ImageView) findViewById(R.id.upload_2);
         title = (EditText) findViewById(R.id.title_text);
@@ -146,6 +148,7 @@ public class sell extends Activity {
                     // if php file returns sucess
                     //Start Login activity so user can Login
                     if (success) {
+                        posted = true;
                         AlertDialog.Builder builder = new AlertDialog.Builder(sell.this);
                         builder.setMessage("Posting Uploaded")
                                 .create()
@@ -168,7 +171,9 @@ public class sell extends Activity {
         RegisterNameRequest registerRequest = new RegisterNameRequest(Home_page.userName, Title, Description,Location,Cost,check,Dimmension,Phone,Email,img,img2, responseListener);
         RequestQueue queue = Volley.newRequestQueue(sell.this);
         queue.add(registerRequest);
-    }
+
+
+    }  // end of finish click
 
     /**
      * @name selctImage

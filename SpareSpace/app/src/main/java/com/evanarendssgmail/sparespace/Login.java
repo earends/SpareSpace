@@ -20,13 +20,11 @@ import org.json.JSONObject;
 public class Login extends Activity {
 
 
-
+    public static String usernme;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
         final EditText etUsername = (EditText) findViewById(R.id.login_username);
         final EditText etPassword = (EditText) findViewById(R.id.login_password);
         final TextView bLogin = (TextView) findViewById(R.id.login_button);
@@ -56,6 +54,7 @@ public class Login extends Activity {
                                 intent.putExtra("name", name);
                                 intent.putExtra("age", age);
                                 intent.putExtra("username", user);
+                                usernme = etUsername.getText().toString();
                                 Login.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
@@ -80,6 +79,11 @@ public class Login extends Activity {
 
     public void register_click(View v) {
         Intent i = new Intent(getApplicationContext(),Register.class);
+        startActivity(i);
+    }
+
+    public void forgot_click(View v) {
+        Intent i = new Intent(getApplicationContext(), UserArea.class);
         startActivity(i);
     }
 }

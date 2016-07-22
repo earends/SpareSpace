@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class home extends ListActivity {
     private String [] image2;
     */
     private static final String SERVER_ADDRESS = "http://sparespace.netai.net/";
+    private Button synchro;
     private static int drawableId;
     private static Bitmap bit;
     private static Drawable draw;
@@ -102,13 +104,13 @@ public class home extends ListActivity {
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
             R.mipmap.ic_launcher
-            //R.mipmap.ic_launcher,
-            //R.mipmap.ic_launcher,
-            //R.mipmap.ic_launcher,
-            //R.mipmap.ic_launcher,
-            //R.mipmap.ic_launcher,
-            //R.mipmap.ic_launcher,
             //R.mipmap.ic_launcher,
             //R.mipmap.ic_launcher,
             //R.mipmap.ic_launcher
@@ -127,6 +129,7 @@ public class home extends ListActivity {
 
         bitList = new ArrayList<Bitmap>();
 
+        synchro = (Button) findViewById(R.id.button_sync);
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -134,8 +137,8 @@ public class home extends ListActivity {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
-
                     if (success) {
+
                         Log.d("YOUR TAG", "SUCESS");
                         /*
                         AlertDialog.Builder builder = new AlertDialog.Builder(home.this);
@@ -174,8 +177,11 @@ public class home extends ListActivity {
 
 
                         Log.d("YOUR TAG", "INIT ARRAY DONE");
+
                         String length = "";
+                        Log.d("YOUR TAG", "INIT ARRAY DONE");
                         int index = 0;
+                        Log.d("YOUR TAG", "INIT ARRAY DONE");
                         for (int i = 0; i < leng; i ++) {
                             index = 11 * i;
                             /*
@@ -202,7 +208,7 @@ public class home extends ListActivity {
                             length = Integer.toString(index + 10);
                             image2[i] = jsonResponse.getString(length);
                             */
-
+                            Log.d("YOUR TAG","IN ARRAY");
                             length = Integer.toString(index);
                             usernames.add(jsonResponse.getString(length));
                             length = Integer.toString(index + 1);
@@ -225,9 +231,16 @@ public class home extends ListActivity {
                             image.add(  jsonResponse.getString(length));
                             length = Integer.toString(index + 10);
                             image2.add( jsonResponse.getString(length));
-
-
                         }
+                        for (int i = 0; i < Jlength; i ++) {
+                            new DownloadImage(image.get(i)).execute();
+                            Log.d("YOUR TAG",image.get(i));
+                            Log.d("YOUR TAG", "Downloading");
+                            Log.d("YOUR TAG", Integer.toString(bitList.size()));
+                            picCount ++;
+                        }
+                        Log.d("YOUR TAG","Done Array");
+
 
 
                         //String name = jsonResponse.getString("name");
@@ -253,6 +266,9 @@ public class home extends ListActivity {
         queue.add(postRequest);
         Log.d("YOUR TAG", "BEFORE LISTVIEW ADAPTER");
 
+
+
+
         //String[] stockArr = new String[arrayList.size()];
         //stockArr = arrayList.toArray(stockArr);
 
@@ -263,6 +279,9 @@ public class home extends ListActivity {
     }//end of oncreate
 
     public void sync_click(View v) {
+
+
+        Log.d("YOUR TAG", "START SYNC");
         int picCount = 0;
         for (int i = 0; i < Jlength; i ++) {
             new DownloadImage(image.get(i)).execute();
@@ -318,13 +337,15 @@ public class home extends ListActivity {
                 //drawableId = Integer.parseInt(img_download.getTag().toString());
                 //download_im.setImageBitmap(bitmap);
                 bitList.add(bitmap);
-                Log.d("YOUR TAG", String.valueOf(bitList.get(0)));
-                Log.d("YOUR TAG",Integer.toString(bitList.size()));
+                //Log.d("YOUR TAG", String.valueOf(bitList.get(0)));
+                //Log.d("YOUR TAG",Integer.toString(bitList.size()));
                 if (bitList.size() == Jlength) {
-                    CustomList adapter = new CustomList(home.this, titles, bitList);
-                    //list = (ListView)findViewById(R.id.list);
-                    list = (ListView) getListView();
-                    list.setAdapter(adapter);
+
+                        CustomList adapter = new CustomList(home.this, titles, bitList);
+                        //list = (ListView)findViewById(R.id.list);
+                        list = (ListView) getListView();
+                        list.setAdapter(adapter);
+
                     Log.d("YOUR TAG", "AFTER LIST VIEW ADAPTED");
                     list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -332,17 +353,18 @@ public class home extends ListActivity {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Toast.makeText(home.this, "You Clicked at " + titles.get(+position) + position, Toast.LENGTH_SHORT).show();
                             //pos = position;
-                            title = titles.get(position);
-                            description = descriptions.get(position);
-                            location = locations.get(position);
-                            cost = costs.get(position);
-                            dimmension = dimmensions.get(position);
-                            phone = phones.get(position);
-                            email = emails.get(position);
-                            img = image.get(position);
-                            img2 = image2.get(position);
-                            Intent i = new Intent(getApplicationContext(),SelectPost.class);
-                            startActivity(i);
+                                title = titles.get(position);
+                                description = descriptions.get(position);
+                                location = locations.get(position);
+                                cost = costs.get(position);
+                                dimmension = dimmensions.get(position);
+                                phone = phones.get(position);
+                                email = emails.get(position);
+                                img = image.get(position);
+                                img2 = image2.get(position);
+                                Intent i = new Intent(getApplicationContext(), SelectPost.class);
+                                startActivity(i);
+
 
                         }
                     });
