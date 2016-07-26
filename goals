@@ -1,0 +1,42 @@
+Logic Side:
+
+Home Login Screen:
+	Signup:
+	Register page needs to come up
+	Username, password x2, Email, agree to services button,
+	go to tab host 
+
+	Login: Go to tabhost
+
+Home tab host:
+	Load postings from server
+	Grab images from server, 
+	Grab listing title from server
+	Display on screen in scrollview
+
+Sell: good:
+	Upload details to server:
+
+Account:
+	cooperate with server and images
+	Scrollview
+	Log out - dialog box that says are you sure you want to
+	Settings page: 
+		Change username, password, edit/delete postings
+		Contact customer support
+		1-800-GO-FUCK-YOURSELF
+
+	
+
+	Next week Goals:
+		George:
+		Make sure all the sketches and mockups look good
+		Mess around with android studio
+		Grid layout, flow, and relative
+
+BIG PICTURE:
+	GPS your location, nearby locations for listings
+	password encryption for the passwords
+	Secure server
+	Efficincy making listiings load faster, not a slow application
+

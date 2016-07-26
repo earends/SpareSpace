@@ -1,0 +1,4 @@
+Project Notes:
+Things to fix:
+If user presses Sync button multiple times?
+-Possible fix check to see if new posts have been made 
