@@ -70,9 +70,11 @@ public class Login extends Activity {
                     }
                 };
 
-                LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
+                //LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
+                Request req = new Request(password,username,null,4,null,null,null,null,null,null,null,null,null,null,0,"http://sparespace.netai.net/Login.php",responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Login.this);
-                queue.add(loginRequest);
+                //queue.add(loginRequest);
+                queue.add(req);
             }
         });
     }
@@ -82,8 +84,5 @@ public class Login extends Activity {
         startActivity(i);
     }
 
-    public void forgot_click(View v) {
-        Intent i = new Intent(getApplicationContext(), UserArea.class);
-        startActivity(i);
-    }
+
 }

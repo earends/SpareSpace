@@ -33,7 +33,6 @@
         <activity android:name=".Register" />
         <activity android:name=".UserArea" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ImageUpload" />
         <activity android:name=".SelectPost"></activity>
     </application>
 

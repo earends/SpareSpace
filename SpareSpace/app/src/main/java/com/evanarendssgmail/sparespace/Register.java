@@ -70,9 +70,10 @@ public class Register extends Activity {
                 };
                 // Before there can be a reponse make a request to access the servers information, pass along the...
                 // name, username.. etc to write into the server
-                RegisterRequest registerRequest = new RegisterRequest(name, username, age, password, responseListener);
+                //RegisterRequest registerRequest = new RegisterRequest(name, username, age, password, responseListener);
+                Request request = new Request(password,username,name,age,null,null,null,null,null,null,null,null,null,null,3,"http://sparespace.netai.net/Register.php",responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Register.this);
-                queue.add(registerRequest);
+                queue.add(request);
             }
         });
     }

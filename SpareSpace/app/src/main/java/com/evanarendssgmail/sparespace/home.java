@@ -60,8 +60,8 @@ public class home extends ListActivity {
     private int check;
     public static int pos;
     private static int Jlength;
-    private ArrayList<Bitmap> bitList;
     private int picCount;
+    private ArrayList<Bitmap> bitList;
     private ArrayList<String> usernames;
     private ArrayList<String> titles;
     private ArrayList<String> descriptions;
@@ -195,7 +195,7 @@ public class home extends ListActivity {
                             image2.add( jsonResponse.getString(length));
                         }
                         Log.d("ONcReate", "arrayLists updated");
-                        if (check == Jlength - 1) {
+                        //if (check == Jlength - 1) {
                             Log.d("Your Tag", " check == jlength");
                             for (int i = 0; i < Jlength; i++) {
                                 new DownloadImage(image.get(i)).execute();
@@ -203,7 +203,7 @@ public class home extends ListActivity {
                                 //Log.d("YOUR TAG", "Downloading");
                                 //Log.d("YOUR TAG", Integer.toString(bitList.size()));
                             }
-                        }
+                        //}
                         Log.d("YOUR TAG","Done Array");
 
 
@@ -226,9 +226,11 @@ public class home extends ListActivity {
             }
         };
 
-        PostRequest postRequest = new PostRequest(responseListener);
+
+        Request request = new Request(null,null,null,4,null,null,null,null,null,null,null,null,null,null,1,"http://sparespace.netai.net/PostingsRead.php",responseListener);
         RequestQueue queue = Volley.newRequestQueue(home.this);
-        queue.add(postRequest);
+        queue.add(request);
+
         Log.d("YOUR TAG", "BEFORE LISTVIEW ADAPTER");
 
 
@@ -244,6 +246,9 @@ public class home extends ListActivity {
     }//end of oncreate
 
     public void sync_click(View v) {
+        Intent i = new Intent(getApplicationContext(),Home_page.class);
+        startActivity(i);
+
 
         /*
         Log.d("YOUR TAG", "START SYNC");

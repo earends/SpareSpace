@@ -168,9 +168,10 @@ public class sell extends Activity {
         };
         // Before there can be a reponse make a request to access the servers information, pass along the...
         // name, username.. etc to write into the server
-        RegisterNameRequest registerRequest = new RegisterNameRequest(Home_page.userName, Title, Description,Location,Cost,check,Dimmension,Phone,Email,img,img2, responseListener);
+        //RegisterNameRequest registerRequest = new RegisterNameRequest(Home_page.userName, Title, Description,Location,Cost,check,Dimmension,Phone,Email,img,img2, responseListener);
+        Request request = new Request(null,Login.usernme,null,4,Title,Description,Location,Cost,check,Dimmension,Phone,Email,img,img2,2,"http://sparespace.netai.net/postingsWrite.php",responseListener);
         RequestQueue queue = Volley.newRequestQueue(sell.this);
-        queue.add(registerRequest);
+        queue.add(request);
 
 
     }  // end of finish click
