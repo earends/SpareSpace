@@ -52,6 +52,7 @@ public class home extends ListActivity {
     private String [] image2;
     */
     private static final String SERVER_ADDRESS = "http://sparespace.netai.net/";
+    private boolean image1;
     private Button synchro;
     private static int drawableId;
     private static Bitmap bit;
@@ -128,6 +129,7 @@ public class home extends ListActivity {
         setContentView(R.layout.activity_home);
 
         //Initialize variables
+        image1 = false;
         picCount = 0;
         check = 0;
         bitList = new ArrayList<Bitmap>();
@@ -135,8 +137,8 @@ public class home extends ListActivity {
 
 
         //set initial listView so screen isnt blank on startup
-        ArrayAdapter<String > adapter = new ArrayAdapter<String>(getListView().getContext(),android.R.layout.simple_list_item_1,web);
-        getListView().setAdapter(adapter);
+        //ArrayAdapter<String > adapter = new ArrayAdapter<String>(getListView().getContext(),android.R.layout.simple_list_item_1,web);
+        //getListView().setAdapter(adapter);
 
         //Listener to grab data table fields
         Response.Listener<String> responseListener = new Response.Listener<String>() {

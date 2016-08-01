@@ -36,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log Out"
+        android:onClick="logout_click"
         android:id="@+id/log_out"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
