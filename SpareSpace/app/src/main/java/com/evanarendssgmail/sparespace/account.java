@@ -3,6 +3,7 @@ package com.evanarendssgmail.sparespace;
 import android.accounts.Account;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 //import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.sinch.android.rtc.SinchError;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -45,7 +48,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 
 //in use currently
-public class account extends Activity {
+public class account extends Activity  {
 
 
     public static account self;
@@ -75,6 +78,8 @@ public class account extends Activity {
         setContentView(R.layout.activity_account);
         nameID = (TextView) findViewById(R.id.name_id);
         userImage = (ImageView) findViewById(R.id.imageView2);
+
+
 
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -313,6 +318,13 @@ public class account extends Activity {
         new UploadImage(bm,Login.usernme + "p").execute();
     }
 
+    public void message_click(View view) {
+
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(i);
+    }
+
+
     private class DownloadImage extends AsyncTask<Void,Void,Bitmap> {
         String name;
 
@@ -399,12 +411,14 @@ public class account extends Activity {
             Toast.makeText(getApplicationContext(), "Image Uploaded", Toast.LENGTH_SHORT).show();
 
         }
+
+
     }
 
-    public void logout_click(View v) {
-        Intent i = new Intent(getApplicationContext(),Login.class);
-        startActivity(i);
-    }
+
+
+
+
 
 
 

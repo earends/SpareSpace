@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sinch.android.rtc.sample.messaging"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="22" />
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.android.tools.fd.runtime.BootstrapApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="SpareSpace"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.sinch.android.rtc.sample.messaging.Login"
+            android:label="SpareSpace"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sinch.android.rtc.sample.messaging.MessagingActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.Info" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.Home_page" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.sell" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.home" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.account" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.settings" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.Register" />
+        <activity android:name="com.sinch.android.rtc.sample.messaging.SelectPost" />
+
+        <service android:name="com.sinch.android.rtc.sample.messaging.SinchService" />
+
+        <activity android:name="com.sinch.android.rtc.sample.messaging.LoginActivity" />
+    </application>
+
+</manifest>

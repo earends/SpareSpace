@@ -54,9 +54,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Messages"
         android:textSize="30dp"
-        android:onClick="logout_click"
+        android:onClick="message_click"
         android:textColor="@color/Gold"
-        android:id="@+id/textView13"
+        android:id="@+id/message_Button"
         android:layout_alignTop="@+id/textView12"
         android:layout_alignRight="@+id/imageView5"
         android:layout_alignEnd="@+id/imageView5" />

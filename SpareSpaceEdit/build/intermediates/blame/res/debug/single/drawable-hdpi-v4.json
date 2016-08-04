@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\send_button_normal.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-hdpi\\send_button_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_pressed.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-hdpi\\login_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\send_button_pressed.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-hdpi\\send_button_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_normal.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-hdpi\\login_normal.png"
+    }
+]

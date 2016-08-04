@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable\\button_send.xml",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable\\button_send.xml"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable\\inputbox.xml",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable\\inputbox.xml"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable\\button_login.xml",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable\\button_login.xml"
+    }
+]

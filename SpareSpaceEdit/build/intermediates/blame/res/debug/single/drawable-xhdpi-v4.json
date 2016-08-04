@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\grey_bubble.9.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-xhdpi\\grey_bubble.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\purple_bubble.9.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-xhdpi\\purple_bubble.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\bg_shadow.9.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-xhdpi\\bg_shadow.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\startbg.9.png",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\drawable-xhdpi\\startbg.9.png"
+    }
+]

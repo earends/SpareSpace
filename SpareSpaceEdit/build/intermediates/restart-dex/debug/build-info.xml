@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="560dpi"
+    format="7"
+    timestamp="5144023688914"
+    token="8877139599443151236" >
+
+    <task
+        name="javac"
+        duration="1940" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="1109" />
+    <task
+        name="verifier"
+        duration="153" />
+
+    <artifact
+        location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\outputs\apk\SpareSpaceEdit-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="5144023688914" >
+        <artifact
+            location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\outputs\apk\SpareSpaceEdit-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
