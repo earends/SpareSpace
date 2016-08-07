@@ -1,33 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
-    <item
-        jar="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="22.0.1"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.volley-volley-1.0.0_d6f58989ee639e0d89d003d5a2870649869cf981\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        revision="22.0.1"
-        sha1="b57e9c27cd9621b5dcda48368840c6636478956d">
-        <dex dex="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_900531aba9348e1f95e7bd329af7ad6ffce98b4c\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="22.0.1"
-        sha1="a4698cfcf7a16020d21e08be69c3cd6fbbdd384f">
-        <dex dex="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_481a53336ac576fa0664b717590dffe1ea32b089\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\libs\sinch-android-rtc-3.9.8.jar"
-        jumboMode="true"
-        revision="22.0.1"
-        sha1="6b1e4ab498c73872ea751de3d0e493f7ca8b83e5">
-        <dex dex="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\dex\debug\folders\1000\2\sinch-android-rtc-3.9.8_c1e8aa6c4015b5bd76047efadc9caa2d86b71296\classes.dex" />
-    </item>
-
-</items>

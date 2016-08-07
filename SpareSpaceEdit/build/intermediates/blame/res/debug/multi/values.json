@@ -3011,8 +3011,46 @@
                     "startLine": 171,
                     "startColumn": 4,
                     "startOffset": 7548,
+                    "endColumn": 57,
+                    "endOffset": 7601
+                },
+                "from": {
+                    "file": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 90,
+                        "endColumn": 57,
+                        "endOffset": 143
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 172,
+                    "startColumn": 4,
+                    "startOffset": 7606,
+                    "endColumn": 55,
+                    "endOffset": 7657
+                },
+                "from": {
+                    "file": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 149,
+                        "endColumn": 55,
+                        "endOffset": 200
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 173,
+                    "startColumn": 4,
+                    "startOffset": 7662,
                     "endColumn": 52,
-                    "endOffset": 7596
+                    "endOffset": 7710
                 },
                 "from": {
                     "file": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\values\\strings.xml",
@@ -3027,12 +3065,12 @@
             },
             {
                 "to": {
-                    "startLine": 172,
+                    "startLine": 174,
                     "startColumn": 4,
-                    "startOffset": 7601,
-                    "endLine": 178,
+                    "startOffset": 7715,
+                    "endLine": 180,
                     "endColumn": 12,
-                    "endOffset": 7898
+                    "endOffset": 8012
                 },
                 "from": {
                     "file": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\values\\styles.xml",
@@ -3048,12 +3086,12 @@
             },
             {
                 "to": {
-                    "startLine": 179,
+                    "startLine": 181,
                     "startColumn": 4,
-                    "startOffset": 7903,
-                    "endLine": 181,
+                    "startOffset": 8017,
+                    "endLine": 183,
                     "endColumn": 12,
-                    "endOffset": 8058
+                    "endOffset": 8172
                 },
                 "from": {
                     "file": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\values\\styles.xml",

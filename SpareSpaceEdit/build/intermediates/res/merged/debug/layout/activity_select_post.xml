@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/DarkSeaGreen"
 
-    tools:context="com.sinch.android.rtc.sample.messaging.SelectPost">
+    tools:context="com.sinch.android.rtc.SpareSpace.Edit.SelectPost">
 
     <ImageView
         android:layout_width="150dp"

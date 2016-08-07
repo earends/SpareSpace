@@ -7,7 +7,7 @@
     android:background="@color/green"
 
 
-    tools:context="com.sinch.android.rtc.sample.messaging.Register">
+    tools:context="com.sinch.android.rtc.SpareSpace.Edit.Register">
 
 
     <EditText

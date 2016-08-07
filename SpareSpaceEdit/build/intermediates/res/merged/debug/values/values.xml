@@ -169,6 +169,8 @@
     <item name="red" type="color">#FFFF4444</item>
     <color name="sinch_purple">#ff63029d</color>
     <item name="white" type="color">#fffafa</item>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="app_name">Sinch Messaging</string>
     <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
         <!--

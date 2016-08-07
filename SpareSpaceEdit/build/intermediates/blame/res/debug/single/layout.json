@@ -32,20 +32,20 @@
         "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\list_single.xml"
     },
     {
-        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\login.xml"
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_info.xml",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\activity_info.xml"
     },
     {
         "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\messaging.xml",
         "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\messaging.xml"
     },
     {
-        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_info.xml",
-        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\activity_info.xml"
-    },
-    {
         "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
         "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list_users.xml",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\activity_list_users.xml"
     },
     {
         "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sell.xml",

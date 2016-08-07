@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@color/blue"
+    android:background="@color/green"
 
-    tools:context="com.sinch.android.rtc.sample.messaging.account">
+    tools:context="com.sinch.android.rtc.SpareSpace.Edit.account">
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Messages"
+        android:onClick="msg_click"
         android:textSize="30dp"
         android:textColor="@color/Gold"
         android:id="@+id/message_Button"
@@ -74,7 +75,7 @@
         android:layout_height="1dp"
         android:id="@+id/imageView5"
         android:src="@color/Chartreuse"
-        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/textView12"
         android:layout_alignParentStart="true" />
 
     <ImageView

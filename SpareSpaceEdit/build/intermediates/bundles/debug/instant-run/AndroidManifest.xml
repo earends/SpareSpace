@@ -10,6 +10,7 @@
 
     <uses-feature
         android:name="android.hardware.microphone"
+        android:largeHeap="true"
         android:required="false" />
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -18,15 +19,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="SpareSpace"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.sinch.android.rtc.sample.messaging.Login"
+            android:name="com.sinch.android.rtc.SpareSpace.Edit.Login"
             android:label="SpareSpace"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -36,20 +38,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sinch.android.rtc.sample.messaging.MessagingActivity"
+            android:name="com.sinch.android.rtc.SpareSpace.Edit.MessagingActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.Info" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.Home_page" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.sell" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.home" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.account" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.settings" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.Register" />
-        <activity android:name="com.sinch.android.rtc.sample.messaging.SelectPost" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.Info" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.Home_page" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.sell" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.home" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.account" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.settings" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.Register" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.SelectPost" />
 
-        <service android:name="com.sinch.android.rtc.sample.messaging.SinchService" />
+        <service android:name="com.sinch.android.rtc.SpareSpace.Edit.SinchService" />
 
-        <activity android:name="com.sinch.android.rtc.sample.messaging.LoginActivity" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.ListUsers" />
     </application>
 
 </manifest>

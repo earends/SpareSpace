@@ -4,30 +4,40 @@
     api-level="23"
     density="560dpi"
     format="7"
-    timestamp="5144023688914"
+    timestamp="169421559075360"
     token="8877139599443151236" >
 
     <task
         name="javac"
-        duration="1940" />
+        duration="494" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1109" />
+        duration="120" />
     <task
         name="verifier"
-        duration="153" />
+        duration="22" />
 
     <artifact
-        location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\outputs\apk\SpareSpaceEdit-debug.apk"
-        type="MAIN" />
+        location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
 
-    <build timestamp="5144023688914" >
+    <build timestamp="168521533613873" >
         <artifact
             location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\outputs\apk\SpareSpaceEdit-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="168967241315807" >
+        <artifact
+            location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+    <build timestamp="169421559075360" >
+        <artifact
+            location="C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

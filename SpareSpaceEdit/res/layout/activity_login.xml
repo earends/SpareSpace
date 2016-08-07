@@ -6,8 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@color/MediumVioletRed"
+        android:layout_height="270dp"
+        android:background="@drawable/backdrop"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/relativeLayout">
@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="SpareSpace"
+            android:textColor="@color/off_white"
             android:textSize="50dp"
             android:id="@+id/textView5"
             android:layout_alignParentTop="true"
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Looking for storage?"
+            android:textColor="@color/off_white"
             android:id="@+id/textView6"
             android:layout_below="@+id/textView5"
             android:layout_centerHorizontal="true" />
@@ -38,6 +40,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Looking for extra cash?"
             android:id="@+id/textView7"
+            android:textColor="@color/off_white"
             android:layout_below="@+id/textView6"
             android:layout_centerHorizontal="true" />
 
@@ -46,6 +49,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Sign up today!"
+            android:textColor="@color/off_white"
             android:id="@+id/textView8"
             android:layout_below="@+id/textView7"
             android:layout_centerHorizontal="true" />
@@ -57,7 +61,7 @@
             android:text="SIGN UP"
             android:onClick="register_click"
             android:textSize="30dp"
-            android:textColor="@color/Gold"
+            android:textColor="@color/off_white"
             android:id="@+id/textView9"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/textView8"
@@ -69,7 +73,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="LOG IN"
             android:textSize="30dp"
-            android:textColor="@color/Gold"
+            android:textColor="@color/off_white"
             android:id="@+id/login_button"
             android:layout_alignTop="@+id/textView9"
             android:layout_toRightOf="@+id/textView8"
@@ -79,7 +83,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/ForestGreen"
+        android:background="@color/off_white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -118,7 +122,7 @@
             android:text="Forgot?"
             android:textSize="15dp"
             android:onClick="forgot_click"
-            android:textColor="@color/Gold"
+            android:textColor="@color/blue"
             android:id="@+id/textView11"
             android:layout_alignBottom="@+id/login_password"
             android:layout_alignParentRight="true"

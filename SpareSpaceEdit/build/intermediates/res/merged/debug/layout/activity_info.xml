@@ -6,7 +6,7 @@
 
     android:background="@color/red"
 
-    tools:context="com.sinch.android.rtc.sample.messaging.Info">
+    tools:context="com.sinch.android.rtc.SpareSpace.Edit.Info">
 
     <TextView
         android:layout_width="wrap_content"

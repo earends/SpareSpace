@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sinch.android.rtc.sample.messaging"
-          android:versionCode="1"
-          android:versionName="1.0">
+    package="com.sinch.android.rtc.sample.messaging"
+    android:versionCode="1"
+    android:versionName="1.0">
 
     <uses-feature
-            android:name="android.hardware.microphone"
-            android:required="false"/>
+        android:name="android.hardware.microphone"
+        android:largeHeap="true"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -14,33 +15,39 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
-            android:allowBackup="true"
-            android:icon="@drawable/icon"
-            android:label="SpareSpace"
-            android:theme="@style/AppTheme">
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="SpareSpace"
+        android:theme="@style/AppTheme">
         <activity
-                android:name=".Login"
-                android:label="SpareSpace"
-                android:screenOrientation="portrait">
+            android:name="com.sinch.android.rtc.SpareSpace.Edit.Login"
+            android:label="SpareSpace"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MessagingActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".Info" />
-        <activity android:name=".Home_page" />
-        <activity android:name=".sell" />
-        <activity android:name=".home" />
-        <activity android:name=".account" />
-        <activity android:name=".settings" />
-        <activity android:name=".Register" />
-        <activity android:name=".SelectPost" />
-        <service android:name=".SinchService"/>
-        <activity android:name=".LoginActivity"/>
+        <activity
+            android:name="com.sinch.android.rtc.SpareSpace.Edit.MessagingActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.Info" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.Home_page" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.sell" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.home" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.account" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.settings" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.Register" />
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.SelectPost" />
+
+        <service android:name="com.sinch.android.rtc.SpareSpace.Edit.SinchService" />
+
+        <activity android:name="com.sinch.android.rtc.SpareSpace.Edit.ListUsers"></activity>
     </application>
 
 </manifest>
