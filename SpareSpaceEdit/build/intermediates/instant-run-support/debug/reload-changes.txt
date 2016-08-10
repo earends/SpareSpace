@@ -1,5 +1,0 @@
-CHANGED,C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sinch\android\rtc\SpareSpace\Edit\ListUsers$1$override.class
-CHANGED,C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sinch\android\rtc\SpareSpace\Edit\ListUsers$override.class
-CHANGED,C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sinch\android\rtc\SpareSpace\Edit\MessagingActivity$override.class
-CHANGED,C:\Users\Evan\AndroidStudioProjects\SpareSpace\SpareSpaceEdit\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\sinch\android\rtc\SpareSpace\Edit\ListUsers$2$override.class

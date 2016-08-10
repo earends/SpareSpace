@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\message_left.xml",
-        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\message_left.xml"
-    },
-    {
         "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
         "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\message_left.xml",
+        "source": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\res\\layout\\message_left.xml"
     },
     {
         "merged": "C:\\Users\\Evan\\AndroidStudioProjects\\SpareSpace\\SpareSpaceEdit\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_post.xml",
