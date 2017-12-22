@@ -22,3 +22,5 @@ For an individual looking to offer space to store items:
 5)	User completes listing and listing is available for the public to see.
 6)	Outside of the application, user may receive texts, emails, calls (similar to craigslist style) regarding listing.
 
+HAS BEEN DISCONTINUED AND IS NO LONGER UNDER MAINTENANCE
+
