@@ -1,5 +1,6 @@
 package com.evanarendssgmail.sparespace;
 
+import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -51,5 +52,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * What happens when the user presses the login Button
+     * @param v
+     */
+    public void login_click(View v) {
+        Intent i = new Intent(getApplicationContext(), Home_page.class);
+        startActivity(i);
+    }
+
+    public void register_click(View v) {
+        Intent i = new Intent(getApplicationContext(),Register.class);
+        startActivity(i);
     }
 }
